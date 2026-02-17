@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ClothesStoreApp.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ClothesStoreDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public ClothesStoreDbContext(DbContextOptions<ClothesStoreDbContext> options)
             : base(options)
         {
         }
