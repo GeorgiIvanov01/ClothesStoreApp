@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesStoreApp", "ClothesStoreApp\ClothesStoreApp.csproj", "{EEC600A2-93AA-490A-B918-56084283FAFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesStoreApp.Data", "ClothesStoreApp.Data\ClothesStoreApp.Data.csproj", "{AB003E93-3712-41FE-A35E-5B555EE1D68C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEC600A2-93AA-490A-B918-56084283FAFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEC600A2-93AA-490A-B918-56084283FAFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEC600A2-93AA-490A-B918-56084283FAFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEC600A2-93AA-490A-B918-56084283FAFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB003E93-3712-41FE-A35E-5B555EE1D68C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB003E93-3712-41FE-A35E-5B555EE1D68C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB003E93-3712-41FE-A35E-5B555EE1D68C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB003E93-3712-41FE-A35E-5B555EE1D68C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB2C34E3-BCC6-4179-855F-9977F9F20BBB}
+	EndGlobalSection
+EndGlobal
