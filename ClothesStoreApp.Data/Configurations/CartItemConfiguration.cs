@@ -1,12 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ClothesStoreApp.Data.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ClothesStoreApp.Data.Configurations
 {
-    public class CartItemConfiguration
+    internal class CartItemConfiguration : IEntityTypeConfiguration<CartItem>
     {
+        public void Configure(EntityTypeBuilder<CartItem> entity)
+        {
+            entity
+                .ToTable("CartItems");
+
+            entity
+                .HasKey(i => i.Id);
+
+            entity
+                .Property(i => i.Quantity)
+                .IsRequired();
+
+            entity
+                .HasOne(i => i.Product)
+                .WithMany(p => p.CartItems)
+                .HasForeignKey(i => i.ProductId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // avoid duplicates
+            entity
+                .HasIndex(i => new { i.CartId, i.ProductId })
+                .IsUnique();
+        }
     }
 }

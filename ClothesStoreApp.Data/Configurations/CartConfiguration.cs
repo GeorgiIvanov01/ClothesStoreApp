@@ -1,12 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ClothesStoreApp.Data.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ClothesStoreApp.Data.Configurations
 {
-    public class CartConfiguration
+    internal class CartConfiguration : IEntityTypeConfiguration<Cart>
     {
+        public void Configure(EntityTypeBuilder<Cart> entity)
+        {
+            entity
+                .ToTable("Carts");
+
+            entity
+                .HasKey(c => c.Id);
+
+            // one to many relationship between Cart and CartItem
+            entity
+                .HasMany(c => c.Items)
+                .WithOne(i => i.Cart)
+                .HasForeignKey(i => i.CartId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // make sure we have one cart per customer
+            entity
+                .HasIndex(c => c.CustomerId)
+                .IsUnique();
+        }
     }
 }

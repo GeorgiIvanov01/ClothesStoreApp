@@ -2,15 +2,15 @@
 {
     public class ProductImage
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
-        // Image path or URL
+        // image path
         public string Url { get; set; } = null!;
 
-        // Mark one image as primary
+        // mark one image as primary
         public bool IsPrimary { get; set; }
 
-        public int ProductId { get; set; }
+        public Guid ProductId { get; set; }
         public Product Product { get; set; } = null!;
     }
 }

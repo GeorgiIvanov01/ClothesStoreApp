@@ -4,7 +4,7 @@ namespace ClothesStoreApp.Data.Models
 {
     public class Order
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public DateTime TimeCreated { get; set; } = DateTime.UtcNow;
 
@@ -22,20 +22,20 @@ namespace ClothesStoreApp.Data.Models
     
         public decimal Subtotal { get; set; }
 
-        // DiscountTotal = discounts applied (if any)
+        // discounts applied (if any)
         public decimal DiscountTotal { get; set; }
 
-        // ShippingTotal = shipping cost
+        // shipping cost
         public decimal ShippingTotal { get; set; }
 
-        // GrandTotal = Subtotal - DiscountTotal + ShippingTotal
+        // Subtotal - DiscountTotal + ShippingTotal
         public decimal GrandTotal { get; set; }
 
 
         public Payment? Payment { get; set; }
         public Shipment? Shipment { get; set; }
 
-        public int CustomerId { get; set; }
+        public Guid CustomerId { get; set; }
         public Customer Customer { get; set; } = null!;
 
         public ICollection<OrderItem> Items { get; set; }
