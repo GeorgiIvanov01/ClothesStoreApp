@@ -15,6 +15,12 @@ namespace ClothesStoreApp.Data.Configurations
                 .HasKey(c => c.Id);
 
             entity
+                .HasOne(c => c.User)
+                .WithOne(u => u.Customer)
+                .HasForeignKey<Customer>(c => c.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            entity
                 .Property(c => c.Email)
                 .HasMaxLength(256)
                 .IsRequired();

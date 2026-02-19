@@ -8,5 +8,7 @@ namespace ClothesStoreApp.Data.Models
         {
             Id = Guid.NewGuid();
         }
+
+        public Customer? Customer { get; set; }
     }
 }
