@@ -1,5 +1,6 @@
 using ClothesStoreApp.Data;
 using ClothesStoreApp.Data.Models;
+using ClothesStoreApp.Data.Utilities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -47,4 +48,15 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
-app.Run();
+using (var scope = app.Services.CreateScope())
+{ 
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<ClothesStoreDbContext>();
+
+    await DataProcessor.ImportCategories(context);
+    //await DataProcessor.ImportProducts(context);
+    //await DataProcessor.ImportImages(context);
+}
+
+
+    app.Run();

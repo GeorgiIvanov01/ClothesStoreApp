@@ -1,0 +1,22 @@
+[
+  {
+    "Id": "41119cb8-20f3-434a-a22f-a00d73d0f189",
+    "Name": "Women"
+  },
+  {
+    "Id": "8c6c5515-f70f-4592-b685-011b6dd6094f",
+    "Name": "Men"
+  },
+  {
+    "Id": "1bdf2043-0dcb-4450-949d-af1cb1d12762",
+    "Name": "Kids"
+  },
+  {
+    "Id": "a4837345-1abd-40db-a4f3-d9aa9070e32c",
+    "Name": "Accessories"
+  },
+  {
+    "Id": "9160a5b7-b56a-491f-8fe3-ec4a751580e1",
+    "Name": "Shoes"
+  }
+]

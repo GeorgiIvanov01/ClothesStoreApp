@@ -14,7 +14,7 @@
             = new List<Order>();
 
         //Customer is also a user of the application, so we need to link it to the ApplicationUser.
-        public string UserId { get; set; } = null!;
+        public Guid UserId { get; set; }
         public ApplicationUser User { get; set; } = null!;
     }
 }
