@@ -48,12 +48,14 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
+//Uncomment the code below to import the seed data into the database.
+//Make sure to do the same for the DataProcessor.cs file.
 using (var scope = app.Services.CreateScope())
 { 
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<ClothesStoreDbContext>();
 
-    await DataProcessor.ImportCategories(context);
+    //await DataProcessor.ImportCategories(context);
     //await DataProcessor.ImportProducts(context);
     //await DataProcessor.ImportImages(context);
 }
