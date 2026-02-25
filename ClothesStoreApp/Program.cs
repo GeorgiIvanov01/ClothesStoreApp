@@ -15,6 +15,12 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>(options =>
 {
     options.SignIn.RequireConfirmedAccount = false;
+
+    options.Password.RequireDigit = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequiredLength = 6;
 })
   .AddRoles<IdentityRole<Guid>>()
   .AddEntityFrameworkStores<ClothesStoreDbContext>();
@@ -54,6 +60,9 @@ using (var scope = app.Services.CreateScope())
 { 
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<ClothesStoreDbContext>();
+
+    DataProcessor.SeedRoles(services);
+    DataProcessor.SeedUsers(services);
 
     //await DataProcessor.ImportCategories(context);
     //await DataProcessor.ImportProducts(context);
